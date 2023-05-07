@@ -1,4 +1,6 @@
 #include "size.h"
+#include "freelist.h"
+
 
 struct thread_cache
 {

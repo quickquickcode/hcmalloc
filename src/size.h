@@ -11,9 +11,12 @@
     //定义掩码
     #define mask 13
     //定义这个页面大小下有多少个不同的大小    数字不准确 需要修改
-    #define size_num 2
+    #define size_num 
     //定义一个由大小获取下标的宏
     #define getidx(size) \
+    16  0
+    32 1
+
           
 #elif page_size == 8192
     #define mask 14
