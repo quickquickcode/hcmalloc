@@ -62,10 +62,11 @@ void* calloc()
 }
 */
 
+//记得加注释
 int main()
 {
     int a=page_size;
-    int b=mask;
+    int b=mask;//??这是什么东西？hqb
 
     printf("%d   %d",a,b);
 }
