@@ -1,3 +1,5 @@
+#include "size.h"
+
 struct thread_cache
 {
     struct thread_cache* next;//????????????
@@ -5,6 +7,6 @@ struct thread_cache
 
     int size;
 
-    freelist free_[];
+    freelist free_[size_num-1];
 
 };
