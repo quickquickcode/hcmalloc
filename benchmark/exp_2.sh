@@ -3,20 +3,20 @@ gcc -o mem.out  ../mem_malloc/src/memmalloc.c  ./exp_1.c -DMEM_MALLOC   -I../mem
 gcc -o hc.out  ../src/hcmalloc.c  ./exp_1.c -DHC_MALLOC   -I../src -lpthread
 
 
-i="1"
+i="0"
 BASE="10000"
 SLOP="10000"
 THNUM="20"
 
-while [ $i -lt 17 ]
+while [ $i -lt 15 ]
 do
     TIMES=$(($BASE+$i*$SLOP))
-    echo -n $(($i*64))" ">>hc
-    echo -n $(($i*64))" ">>pt
-    echo -n $(($i*64))" ">>mem
-    ./hc.out $(($i*64)) $THNUM >>hc
-    ./pt.out $(($i*64)) $THNUM >>pt
-    ./mem.out $(($i*64)) $THNUM >>mem
+    echo -n $TIMES" ">>hc
+    echo -n $TIMES" ">>pt
+    echo -n $TIMES" ">>mem
+    ./hc.out $TIMES $THNUM >>hc
+    ./pt.out $TIMES $THNUM >>pt
+    ./mem.out $TIMES $THNUM >>mem
     echo "" >> hc
     echo "" >> pt
     echo "" >> mem
@@ -26,7 +26,3 @@ python3 static_analy.py 2
 rm hc
 rm pt
 rm mem
-
- 
-
-
